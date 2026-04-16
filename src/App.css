@@ -1,0 +1,7 @@
+.accordion-items {
+  width: 100%;
+}
+
+.accordion-title {
+  display: flex;
+}
