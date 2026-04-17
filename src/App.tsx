@@ -20,6 +20,10 @@ function App() {
   const [activeIndex, setActiveIndex] = useState<number | undefined>();
   const [activeMultiple, setActiveMultiple] = useState<number[]>([]);
 
+  const handleClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <>
       <h1>Accordion for Daddy Jokes</h1>
@@ -28,11 +32,12 @@ function App() {
         <h2>Only one can be opened</h2>
         <div className="accordion-items">
           {daddyJokes.map(({ question, answer }, index) => (
-            <div key={question} className="accordion-item">
-              <div
-                className="accordion-title"
-                onClick={() => setActiveIndex(index)}
-              >
+            <div
+              key={question}
+              className="accordion-item"
+              onClick={() => handleClick(index)}
+            >
+              <div className="accordion-title">
                 <div>{question}</div>
                 <div>+</div>
               </div>
