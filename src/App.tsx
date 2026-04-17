@@ -21,7 +21,7 @@ function App() {
   const [activeMultiple, setActiveMultiple] = useState<number[]>([]);
 
   const handleClick = (index: number) => {
-    setActiveIndex(index);
+    setActiveIndex(index === activeIndex ? undefined : index);
   };
 
   return (
