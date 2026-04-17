@@ -62,11 +62,12 @@ function App() {
         <h2>Multiple can be opened</h2>
         <div className="accordion-items">
           {daddyJokes.map(({ question, answer }, index) => (
-            <div key={question} className="accordion-item">
-              <div
-                className="accordion-title"
-                onClick={() => handleMultipleAccordionClick(index)}
-              >
+            <div
+              key={question}
+              className="accordion-item"
+              onClick={() => handleMultipleAccordionClick(index)}
+            >
+              <div className="accordion-title">
                 <div>{question}</div>
                 <div>+</div>
               </div>
