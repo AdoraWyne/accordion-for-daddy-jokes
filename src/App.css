@@ -9,8 +9,7 @@
 
 .accordion-item {
   border: 1px grey solid;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
 
 .accordion-title {
