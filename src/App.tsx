@@ -20,8 +20,17 @@ function App() {
   const [activeIndex, setActiveIndex] = useState<number | undefined>();
   const [activeMultiple, setActiveMultiple] = useState<number[]>([]);
 
-  const handleClick = (index: number) => {
+  const handleSingleAccordionClick = (index: number) => {
     setActiveIndex(index === activeIndex ? undefined : index);
+  };
+
+  // ask this
+  const handleMultipleAccordionClick = (index: number) => {
+    setActiveMultiple((prev) =>
+      prev.includes(index)
+        ? prev.filter((item) => item !== index)
+        : [...prev, index],
+    );
   };
 
   return (
@@ -35,7 +44,7 @@ function App() {
             <div
               key={question}
               className="accordion-item"
-              onClick={() => handleClick(index)}
+              onClick={() => handleSingleAccordionClick(index)}
             >
               <div className="accordion-title">
                 <div>{question}</div>
@@ -56,7 +65,7 @@ function App() {
             <div key={question} className="accordion-item">
               <div
                 className="accordion-title"
-                onClick={() => setActiveMultiple((prev) => [...prev, index])}
+                onClick={() => handleMultipleAccordionClick(index)}
               >
                 <div>{question}</div>
                 <div>+</div>
