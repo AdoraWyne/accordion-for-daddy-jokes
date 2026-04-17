@@ -7,6 +7,13 @@
   width: 100%;
 }
 
+.accordion-item {
+  border: 1px grey solid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .accordion-title {
   display: flex;
+  justify-content: space-between;
 }

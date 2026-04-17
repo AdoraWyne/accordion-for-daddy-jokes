@@ -25,6 +25,22 @@ function App() {
       <h1>Accordion for Daddy Jokes</h1>
 
       <div className="accordion-container">
+        <h2>Only one can be opened</h2>
+        <div className="accordion-items">
+          {daddyJokes.map(({ question, answer }, index) => (
+            <div key={question} className="accordion-item">
+              <div
+                className="accordion-title"
+                onClick={() => setActiveIndex(index)}
+              >
+                <div>{question}</div>
+                <div>+</div>
+              </div>
+              {activeIndex === index && (
+                <div className="accordion-content">{answer}</div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -32,7 +48,7 @@ function App() {
         <h2>Multiple can be opened</h2>
         <div className="accordion-items">
           {daddyJokes.map(({ question, answer }, index) => (
-            <div key={question}>
+            <div key={question} className="accordion-item">
               <div
                 className="accordion-title"
                 onClick={() => setActiveMultiple((prev) => [...prev, index])}
